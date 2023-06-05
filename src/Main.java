@@ -32,8 +32,8 @@ public class Main {
     public static void task1(int[] expensesArray) {
         //int[] expensesArray = generateIntArray();
         var result = 0;
-        for (int i : expensesArray) {
-            result += i;
+        for (int expense : expensesArray) {
+            result += expense;
         }
         System.out.printf("Сумма трат за месяц составила %d рублей\n", result);
     }
@@ -44,17 +44,17 @@ public class Main {
     //«Минимальная сумма трат за день составила … рублей. Максимальная сумма трат за день составила … рублей».
     public static void task2(int[] expensesArray) {
         //int[] expensesArray = generateIntArray();
-        int min = expensesArray[0];
-        int max = expensesArray[0];
-        for (int i : expensesArray) {
-            if (min > i) {
-                min = i;
+        int minExpense = expensesArray[0];
+        int maxExpense = expensesArray[0];
+        for (int expense : expensesArray) {
+            if (minExpense > expense) {
+                minExpense = expense;
             }
-            if (max < i) {
-                max = i;
+            if (maxExpense < expense) {
+                maxExpense = expense;
             }
         }
-        System.out.printf("Минимальная сумма трат за день составила %d рублей. Максимальная сумма трат за день составила %d рублей\n", min, max);
+        System.out.printf("Минимальная сумма трат за день составила %d рублей. Максимальная сумма трат за день составила %d рублей\n", minExpense, maxExpense);
     }
 
     //Задача 3
@@ -65,8 +65,8 @@ public class Main {
     public static void task3(int[] expensesArray) {
         //int[] expensesArray = generateIntArray();
         double result = 0.0;
-        for (int i : expensesArray) {
-            result += i;
+        for (int expense : expensesArray) {
+            result += expense;
         }
         result /= expensesArray.length;
         System.out.printf("Средняя сумма трат за месяц составила %.2f рублей\n", result);
