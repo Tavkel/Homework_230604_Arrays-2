@@ -29,10 +29,10 @@ public class Main {
     //Задача 1
     //Бухгалтеры попросили посчитать сумму всех выплат за месяц.
     //Напишите программу, которая решит эту задачу, и выведите в консоль результат в формате: «Сумма трат за месяц составила … рублей».
-    public static void task1(int[] array) {
-        //int[] array = generateIntArray();
+    public static void task1(int[] expensesArray) {
+        //int[] expensesArray = generateIntArray();
         var result = 0;
-        for (int i : array) {
+        for (int i : expensesArray) {
             result += i;
         }
         System.out.printf("Сумма трат за месяц составила %d рублей\n", result);
@@ -42,13 +42,17 @@ public class Main {
     //Также бухгалтерия попросила найти минимальную и максимальную трату за день.
     //Напишите программу, которая решит эту задачу, и выведите в консоль результат в формате:
     //«Минимальная сумма трат за день составила … рублей. Максимальная сумма трат за день составила … рублей».
-    public static void task2(int[] array) {
-        //int[] array = generateIntArray();
-        int min = array[0];
-        int max = array[0];
-        for (int i : array) {
-            if (min > i) min = i;
-            if (max < i) max = i;
+    public static void task2(int[] expensesArray) {
+        //int[] expensesArray = generateIntArray();
+        int min = expensesArray[0];
+        int max = expensesArray[0];
+        for (int i : expensesArray) {
+            if (min > i) {
+                min = i;
+            }
+            if (max < i) {
+                max = i;
+            }
         }
         System.out.printf("Минимальная сумма трат за день составила %d рублей. Максимальная сумма трат за день составила %d рублей\n", min, max);
     }
@@ -58,13 +62,13 @@ public class Main {
     //Напишите программу, которая посчитает среднее значение трат за месяц (то есть сумму всех трат за месяц поделить
     //на количество дней), и выведите в консоль результат в формате: «Средняя сумма трат за месяц составила … рублей».
     //Важно помнить: подсчет среднего значения может иметь остаток, то есть быть не целым, а дробным числом.
-    public static void task3(int[] array) {
-        //int[] array = generateIntArray();
+    public static void task3(int[] expensesArray) {
+        //int[] expensesArray = generateIntArray();
         double result = 0.0;
-        for (int i : array) {
+        for (int i : expensesArray) {
             result += i;
         }
-        result /= array.length;
+        result /= expensesArray.length;
         System.out.printf("Средняя сумма трат за месяц составила %.2f рублей\n", result);
     }
 
@@ -80,14 +84,8 @@ public class Main {
     //циклом и распечатать его элементы в правильном порядке.
     public static void task4() {
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = 0; i < reverseFullName.length / 2; i++) {
-            reverseFullName[i] ^= reverseFullName[reverseFullName.length - 1 - i];
-            reverseFullName[reverseFullName.length - 1 - i] ^= reverseFullName[i];
-            reverseFullName[i] ^= reverseFullName[reverseFullName.length - 1 - i];
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
         }
-        for (char c : reverseFullName) {
-            System.out.print(c);
-        }
-        System.out.println();
     }
 }
